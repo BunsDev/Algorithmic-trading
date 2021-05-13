@@ -178,5 +178,4 @@ if __name__ == '__main__':
 #Download Daily_Volatility function
 
     
-#844347012(upendra chat id)
-#@algotradealert (Channel name)
+ 
