@@ -103,8 +103,6 @@ def telegram(company, close, high, low,a):
 ##### TELEGRAM FUNCTION END #########      
 
 
-
-
 def timeconvert(df3):
    
     #now = datetime.today() - timedelta(days=1)
