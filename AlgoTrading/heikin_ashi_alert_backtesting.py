@@ -46,6 +46,13 @@ def timeConvert():
     time_from=str(time_from)
     print("time_from ->", time_from)
 
+    format_date = day.strftime("%Y-%m-%d")
+    date_time = format_date + " 09:25:00"
+    pattern = '%Y-%m-%d %H:%M:%S'
+    time_to = int(time.mktime(time.strptime(date_time, pattern)))
+    time_to=str(time_to)
+    print("time_to ->", time_to)
+
 
 # data = {"symbol":"NSE:SBIN-EQ","resolution":"15","date_format":"1","range_from":"2022-01-28","range_to":"2022-01-28","cont_flag":"1"}
 # print(fyers.history(data))
