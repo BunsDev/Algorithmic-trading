@@ -1,3 +1,4 @@
+from asyncore import write
 from fyers_api import accessToken
 from fyers_api import fyersModel
 import pandas as pd
@@ -6,6 +7,7 @@ from datetime import datetime
 from datetime import timedelta
 from datetime import date
 import time
+import csv
 
 client_id = "VHPC1DCHNN-100"                       # Client_id here refers to APP_ID of the created app
 op = 0
@@ -24,9 +26,6 @@ def fetchData(time_from,time_to,df):
         global name
         name=row[1][0]
         stock="NSE:"+name+"-EQ"
-        op=row[1][1]
-        cl=row[1][2]
-        cashValue=row[1][3]
         market_data = fyers.history(
         data = {
         "symbol" : stock,
@@ -39,7 +38,12 @@ def fetchData(time_from,time_to,df):
         }
         )
         val = market_data["candles"]
-        print(val)
+        fields = ["Date", "Open", "High", "Low" ,"Close", "Volume"]
+        
+        with open("stock_data_save.csv", "w") as f:
+            write = csv.writer(f)
+            write.writerow(fields)
+            write.writerows(val)
 
 
 
