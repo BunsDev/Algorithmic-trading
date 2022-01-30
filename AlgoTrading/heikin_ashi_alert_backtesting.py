@@ -17,10 +17,9 @@ fyers = fyersModel.FyersModel(token=access_token,is_async=False,client_id=client
 
 def read_csv():
     df = pd.read_csv("StockList.csv")
-    fetchData(df)
-    timeConvert()
+    timeConvert(df)
     
-def fetchData(df):
+def fetchData(time_from,time_to,tim,df):
     for row in df.iterrows():
         global name
         name=row[1][0]
@@ -33,8 +32,21 @@ def fetchData(df):
         cashValue=row[1][3]
         print("cashValue ->", cashValue)
 
+        data1 = fyers.history(
+        data = {
+        "symbol" : stock,
+        "resolution" : "1",
+        "date_format" : "1",
+        "range_from" : time_from ,
+        "range_to" : time_to,
+        "cont_flag" : "1"
 
-def timeConvert():
+        }
+        )
+
+        print("Output ->",data1)
+
+def timeConvert(df):
     day = datetime.today() - timedelta(days=2)  #if you want to work on previoius day data
     # day = datetime.now()  #for current day data
     # print("now ->",previous_day)
@@ -52,6 +64,14 @@ def timeConvert():
     time_to = int(time.mktime(time.strptime(date_time, pattern)))
     time_to=str(time_to)
     print("time_to ->", time_to)
+
+    tim=10 # time change time is now 10
+    
+    for _ in range(42):
+        fetchData(time_from,time_to,tim,df)
+        time_from=str(int(time_from)+600)
+        time_to=str(int(time_to)+600)
+        time.sleep(1)
 
 
 # data = {"symbol":"NSE:SBIN-EQ","resolution":"15","date_format":"1","range_from":"2022-01-28","range_to":"2022-01-28","cont_flag":"1"}

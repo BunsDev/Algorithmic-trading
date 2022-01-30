@@ -1,0 +1,22 @@
+
+1643561991353 :: history :: {'symbol': 'NSE:SBIN-EQ', 'resolution': '1', 'date_format': '1', 'range_from': '1643341500', 'range_to': '1643342100', 'cont_flag': '1'} :: 1643561991602 :: {'s': 'error', 'code': -337, 'message': 'Please provide from valid historical timestamp from when you require data in proper YYYY-MM-DD format'}
+
+1643561992605 :: history :: {'symbol': 'NSE:SBIN-EQ', 'resolution': '1', 'date_format': '1', 'range_from': '1643342100', 'range_to': '1643342700', 'cont_flag': '1'} :: 1643561992773 :: {'s': 'error', 'code': -337, 'message': 'Please provide from valid historical timestamp from when you require data in proper YYYY-MM-DD format'}
+
+1643561993775 :: history :: {'symbol': 'NSE:SBIN-EQ', 'resolution': '1', 'date_format': '1', 'range_from': '1643342700', 'range_to': '1643343300', 'cont_flag': '1'} :: 1643561993948 :: {'s': 'error', 'code': -337, 'message': 'Please provide from valid historical timestamp from when you require data in proper YYYY-MM-DD format'}
+
+1643561994950 :: history :: {'symbol': 'NSE:SBIN-EQ', 'resolution': '1', 'date_format': '1', 'range_from': '1643343300', 'range_to': '1643343900', 'cont_flag': '1'} :: 1643561995122 :: {'s': 'error', 'code': -337, 'message': 'Please provide from valid historical timestamp from when you require data in proper YYYY-MM-DD format'}
+
+1643561996129 :: history :: {'symbol': 'NSE:SBIN-EQ', 'resolution': '1', 'date_format': '1', 'range_from': '1643343900', 'range_to': '1643344500', 'cont_flag': '1'} :: 1643561996310 :: {'s': 'error', 'code': -337, 'message': 'Please provide from valid historical timestamp from when you require data in proper YYYY-MM-DD format'}
+
+1643561997312 :: history :: {'symbol': 'NSE:SBIN-EQ', 'resolution': '1', 'date_format': '1', 'range_from': '1643344500', 'range_to': '1643345100', 'cont_flag': '1'} :: 1643561997486 :: {'s': 'error', 'code': -337, 'message': 'Please provide from valid historical timestamp from when you require data in proper YYYY-MM-DD format'}
+
+1643561998492 :: history :: {'symbol': 'NSE:SBIN-EQ', 'resolution': '1', 'date_format': '1', 'range_from': '1643345100', 'range_to': '1643345700', 'cont_flag': '1'} :: 1643561998669 :: {'s': 'error', 'code': -337, 'message': 'Please provide from valid historical timestamp from when you require data in proper YYYY-MM-DD format'}
+
+1643562016186 :: history :: {'symbol': 'NSE:SBIN-EQ', 'resolution': '1', 'date_format': '0', 'range_from': '1643341500', 'range_to': '1643342100', 'cont_flag': '1'} :: 1643562016389 :: {'s': 'error', 'code': -99, 'errmsg': ''}
+
+1643562017395 :: history :: {'symbol': 'NSE:SBIN-EQ', 'resolution': '1', 'date_format': '0', 'range_from': '1643342100', 'range_to': '1643342700', 'cont_flag': '1'} :: 1643562017565 :: {'s': 'error', 'code': -99, 'errmsg': ''}
+
+1643562018570 :: history :: {'symbol': 'NSE:SBIN-EQ', 'resolution': '1', 'date_format': '0', 'range_from': '1643342700', 'range_to': '1643343300', 'cont_flag': '1'} :: 1643562018744 :: {'s': 'error', 'code': -99, 'errmsg': ''}
+
+1643562019748 :: history :: {'symbol': 'NSE:SBIN-EQ', 'resolution': '1', 'date_format': '0', 'range_from': '1643343300', 'range_to': '1643343900', 'cont_flag': '1'} :: 1643562019933 :: {'s': 'error', 'code': -99, 'errmsg': ''}
