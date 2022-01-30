@@ -27,7 +27,7 @@ def fetchData(time_from,time_to,df):
         op=row[1][1]
         cl=row[1][2]
         cashValue=row[1][3]
-        data1 = fyers.history(
+        market_data = fyers.history(
         data = {
         "symbol" : stock,
         "resolution" : "20",
@@ -39,9 +39,8 @@ def fetchData(time_from,time_to,df):
         }
         )
 
-        val = data1.values()
-        for i in val:
-            print(i)
+        print("Market Data ->", market_data)
+        
 
 def timeConvert(df):
     day = datetime.today() - timedelta(days=3)  #if you want to work on previoius day data
