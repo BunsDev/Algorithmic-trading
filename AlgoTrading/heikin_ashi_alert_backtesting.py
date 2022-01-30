@@ -38,9 +38,10 @@ def fetchData(time_from,time_to,df):
 
         }
         )
+        val = market_data["candles"]
+        print(val)
 
-        print("Market Data ->", market_data)
-        
+
 
 def timeConvert(df):
     day = datetime.today() - timedelta(days=3)  #if you want to work on previoius day data
