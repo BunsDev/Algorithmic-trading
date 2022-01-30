@@ -14,12 +14,15 @@ cl = 0
 access_token = open("token.txt", "r").read()
 
 fyers = fyersModel.FyersModel(token=access_token,is_async=False,client_id=client_id,log_path="/Users/upendrasingh/Documents/GitHub/Algorithmic-trading/AlgoTrading/")
+v = fyers.get_profile()
+
+print("V ->", v)
 
 def read_csv():
     df = pd.read_csv("StockList.csv")
     timeConvert(df)
     
-def fetchData(time_from,time_to,tim,df):
+def fetchData(time_from,time_to,df):
     for row in df.iterrows():
         global name
         name=row[1][0]
@@ -32,10 +35,14 @@ def fetchData(time_from,time_to,tim,df):
         cashValue=row[1][3]
         print("cashValue ->", cashValue)
 
+        print("TIME_FROM -->", time_from)
+        print("TIME_TO -->", time_to)
+
+        data2 = fyers.get_profile()
         data1 = fyers.history(
         data = {
         "symbol" : stock,
-        "resolution" : "1",
+        "resolution" : "10",
         "date_format" : "1",
         "range_from" : time_from ,
         "range_to" : time_to,
@@ -44,7 +51,8 @@ def fetchData(time_from,time_to,tim,df):
         }
         )
 
-        print("Output ->",data1)
+        print("Output1 ->",data1)
+        print("Output2 ->",data2)
 
 def timeConvert(df):
     day = datetime.today() - timedelta(days=2)  #if you want to work on previoius day data
@@ -52,26 +60,19 @@ def timeConvert(df):
     # print("now ->",previous_day)
 
     format_date = day.strftime("%Y-%m-%d")
-    date_time = format_date + " 09:15:00"
-    pattern = '%Y-%m-%d %H:%M:%S'
-    time_from = int(time.mktime(time.strptime(date_time, pattern)))
-    time_from=str(time_from)
-    print("time_from ->", time_from)
+    date_time = format_date
+    time_from=str(date_time)
+    time_to=str(date_time)
 
-    format_date = day.strftime("%Y-%m-%d")
-    date_time = format_date + " 09:25:00"
-    pattern = '%Y-%m-%d %H:%M:%S'
-    time_to = int(time.mktime(time.strptime(date_time, pattern)))
-    time_to=str(time_to)
-    print("time_to ->", time_to)
+    fetchData(time_from,time_to,df)
 
-    tim=10 # time change time is now 10
+    # tim=10 # time change time is now 10
     
-    for _ in range(42):
-        fetchData(time_from,time_to,tim,df)
-        time_from=str(int(time_from)+600)
-        time_to=str(int(time_to)+600)
-        time.sleep(1)
+    # for _ in range(42):
+    #     fetchData(time_from,time_to,tim,df)
+    #     time_from=str(int(time_from)+600)
+    #     time_to=str(int(time_to)+600)
+    #     time.sleep(1)
 
 
 # data = {"symbol":"NSE:SBIN-EQ","resolution":"15","date_format":"1","range_from":"2022-01-28","range_to":"2022-01-28","cont_flag":"1"}
