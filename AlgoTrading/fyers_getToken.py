@@ -2,7 +2,7 @@ from urllib import response
 from fyers_api import fyersModel
 from fyers_api import accessToken
 
-redirect_uri= ""          # redircet_uri you entered while creating APP.
+redirect_uri= "https://www.google.co.in/"          # redircet_uri you entered while creating APP.
 client_id = ""                       # Client_id here refers to APP_ID of the created app
 secret_key = ""                          # app_secret key which you got after creating the app 
 grant_type = "authorization_code"                  # The grant_type always has to be "authorization_code"
