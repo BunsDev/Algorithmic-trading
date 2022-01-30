@@ -7,7 +7,7 @@ from datetime import timedelta
 from datetime import date
 import time
 
-client_id = ""                       # Client_id here refers to APP_ID of the created app
+client_id = "*****-100"                       # Client_id here refers to APP_ID of the created app
 op = 0
 cl = 0
 
@@ -35,7 +35,7 @@ def fetchData(time_from,time_to, tim,df):
         data1 = fyers.history(
         data = {
         "symbol" : stock,
-        "resolution" : "10",
+        "resolution" : "1",
         "date_format" : "0",
         "range_from" : time_from ,
         "range_to" : time_to,
@@ -52,14 +52,14 @@ def timeConvert(df):
     # print("now ->",previous_day)
 
     format_date = day.strftime("%Y-%m-%d")
-    date_time = format_date + " 09:25:00"
+    date_time = format_date + " 09:15:00"
     pattern = '%Y-%m-%d %H:%M:%S'
     time_from = int(time.mktime(time.strptime(date_time, pattern)))
     time_from=str(time_from)
     print("time_from ->", time_from)
 
     format_date = day.strftime("%Y-%m-%d")
-    date_time = format_date + " 09:35:00"
+    date_time = format_date + " 09:25:00"
     pattern = '%Y-%m-%d %H:%M:%S'
     time_to = int(time.mktime(time.strptime(date_time, pattern)))
     time_to=str(time_to)
@@ -74,7 +74,7 @@ def timeConvert(df):
         fetchData(time_from,time_to, tim,df)
         time_from=str(int(time_from)+600)
         time_to=str(int(time_to)+600)
-        time.sleep(1)
+        time.sleep(600)
 
 
 
