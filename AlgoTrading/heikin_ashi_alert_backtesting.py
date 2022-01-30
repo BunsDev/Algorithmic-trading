@@ -24,14 +24,9 @@ def fetchData(time_from,time_to, tim,df):
         global name
         name=row[1][0]
         stock="NSE:"+name+"-EQ"
-        print("Stock ->", stock)
         op=row[1][1]
-        print("op ->", op)
         cl=row[1][2]
-        print("cl ->", cl)
         cashValue=row[1][3]
-        print("cashValue ->", cashValue)
-
         data1 = fyers.history(
         data = {
         "symbol" : stock,
