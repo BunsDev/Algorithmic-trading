@@ -29,7 +29,7 @@ def fetchData(time_from,time_to,df):
         market_data = fyers.history(
         data = {
         "symbol" : stock,
-        "resolution" : "20",
+        "resolution" : "10",
         "date_format" : "1",
         "range_from" : time_from ,
         "range_to" : time_to,
