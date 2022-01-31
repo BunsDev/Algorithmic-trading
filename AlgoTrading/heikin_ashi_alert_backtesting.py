@@ -1,12 +1,12 @@
-from asyncore import read
 import pandas as pd
 
-def read_csv():
+def read_files(path1, path2):
     df_StockList = pd.read_csv("StockList.csv")
-    Heikin_Ashi(df_StockList)
+    df_stock_data_save = pd.read_csv("stock_data_save.csv")
+    Heikin_Ashi(df_StockList, df_stock_data_save)
     
 
-def Heikin_Ashi(df_StockList):
+def Heikin_Ashi(df_StockList, df_stock_data_save):
     df_stock_data_save = pd.read_csv("stock_data_save.csv")
     
     
@@ -18,8 +18,28 @@ def Heikin_Ashi(df_StockList):
 
 
     ################## Heikin Ashi Open Candle ##########################
-    Stock_Name = list(df_StockList["HA_Open"])
-    print(Stock_Name) 
+    Open_Previous_Value = df_StockList["HA_Open"]
+    # print(len(Stock_Name))
+
+    # for i in range(0, len(df_StockList)):
+    #     if i <= len(Open_Previous_Value):
+    #         print(Open_Previous_Value)
+
+    i = len(Open_Previous_Value)
+
+    while i <= len(Open_Previous_Value):
+        i += 1
+        open = Open_Previous_Value
+        print(open)
+
+    Close_Previous_Value = df_StockList["HA_Close"]
+    # print(len(Stock_Name))
+    i = len(Close_Previous_Value)
+    while i <= len(Close_Previous_Value):
+        i += 1
+        close = Close_Previous_Value
+        print(close)
+    
 
 
 
