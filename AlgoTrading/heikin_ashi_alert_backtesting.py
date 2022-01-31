@@ -18,8 +18,8 @@ def Heikin_Ashi(df_StockList):
 
 
     ################## Heikin Ashi Open Candle ##########################
-    Stock_Name = list(df_StockList["Name"])
-    print(Stock_Name)    
+    Stock_Name = list(df_StockList["HA_Open"])
+    print(Stock_Name) 
 
 
 

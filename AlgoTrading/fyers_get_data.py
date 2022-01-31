@@ -9,7 +9,7 @@ from datetime import date
 import time
 import csv
 
-client_id = "VHPC1DCHNN-100"                       # Client_id here refers to APP_ID of the created app
+client_id = "VHPC****HNN-100"                       # Client_id here refers to APP_ID of the created app
 op = 0
 cl = 0
 
