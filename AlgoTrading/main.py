@@ -6,8 +6,42 @@ from nsepy import get_history
 from datetime import date
 import numpy as np
 import pandas as pd
+from fastapi.encoders import jsonable_encoder
+from fastapi.responses import JSONResponse
 
 app = FastAPI()
+
+
+BankNiftyCE = {
+    "stikeprice": {
+        "8200",
+        "8300",
+        "8400",
+        "8500"
+    },
+    "price": {
+        "222",
+        "432",
+        "567",
+        "111"
+    }
+}
+
+BankNiftyPE = {
+    "stikeprice": {
+        "8200",
+        "8300",
+        "8400",
+        "8500"
+    },
+    "price": {
+        "212",
+        "462",
+        "527",
+        "11"
+    }
+}
+
 
 @app.get("/")
 async def root():
@@ -24,30 +58,10 @@ async def root():
 
 @app.get("/nifty-opt-ce")
 async def root():
-    nifty_opt = get_history(symbol="NIFTY",
-                            start=date(2015,1,1),
-                            end=date(2015,1,10),
-                            index=True,
-                            option_type='CE',
-                            strike_price=8200,
-                            expiry_date=date(2015,1,29))
-    print(nifty_opt)
-
-    nifty_df_to_json = nifty_opt.to_json()
-    print(nifty_df_to_json)
-    return Response(content=nifty_df_to_json, media_type="application/json")
+    json_compatible_item_data = jsonable_encoder(BankNiftyCE)
+    return JSONResponse(content=json_compatible_item_data)
 
 @app.get("/nifty-opt-pe")
 async def root():
-    nifty_opt_pe = get_history(symbol="NIFTY",
-                            start=date(2015,1,1),
-                            end=date(2015,1,10),
-                            index=True,
-                            option_type='PE',
-                            strike_price=8200,
-                            expiry_date=date(2015,1,29))
-    print(nifty_opt_pe)
-
-    nifty_pe_df_to_json = nifty_opt_pe.to_json()
-    print(nifty_pe_df_to_json)
-    return Response(content=nifty_pe_df_to_json, media_type="application/json")
+    json_compatible_item_data = jsonable_encoder(BankNiftyPE)
+    return JSONResponse(content=json_compatible_item_data)
